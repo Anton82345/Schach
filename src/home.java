@@ -1,10 +1,11 @@
 package src;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.*;
 public class home extends JFrame implements ActionListener
 {
-    JLabel SpracheLabel, EndLabel;
+    JLabel SpracheLabel, EndLabel, Hintergrund;
     JButton Beginn, Wiederholen, HomeButton, SpracheAnnehmen;
     JComboBox Sprache;
     sprache sprache;
@@ -17,11 +18,19 @@ public class home extends JFrame implements ActionListener
         this.setLayout(null);
         this.setTitle("Schach von Anton Klonig und Tim Weber");
 
-        // JLabel background = new JLabel(new ImageIcon(
-        // "GUI_Element/background.jpg")); // muss noch repariert werden
-        // background.setBounds(0, 0, 800, 800);
-        // this.setContentPane(background);
-        this.setLayout(null);
+        JLayeredPane layeredPane = new JLayeredPane();
+        this.setContentPane(layeredPane);
+        
+        Hintergrund = new JLabel(new ImageIcon("lib/pic/Background1.jpeg"));
+        Hintergrund.setBounds(0, 0, 800, 800);
+        layeredPane.add(Hintergrund, Integer.valueOf(0));
+
+
+        Beginn = new JButton("spielen");
+        Beginn.setBounds(200, 200, 200, 50);
+        Beginn.addActionListener(this);
+        Beginn.setEnabled(false);
+        this.add(Beginn);
 
         Beginn = new JButton("spielen");
         Beginn.setBounds(200, 200, 200, 50);
@@ -73,5 +82,5 @@ public class home extends JFrame implements ActionListener
         test.setVisible(true);
     }
 }
-//Test
+
 
