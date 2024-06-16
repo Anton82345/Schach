@@ -30,7 +30,7 @@ public class home extends JFrame implements ActionListener, ChangeListener
         JLayeredPane layeredPane = new JLayeredPane();
         this.setContentPane(layeredPane);
         
-        Hintergrund = new JLabel(new ImageIcon("lib/pic/Background1.jpeg"));
+        Hintergrund = new JLabel(new ImageIcon("lib/pic/background2.png"));
         Hintergrund.setBounds(0, 0, 800, 800);
         layeredPane.add(Hintergrund, Integer.valueOf(0));
 
@@ -38,32 +38,32 @@ public class home extends JFrame implements ActionListener, ChangeListener
         Beginn.setBounds(200, 200, 200, 50);
         Beginn.addActionListener(this);
         Beginn.setEnabled(false);
-        this.add(Beginn);
+        layeredPane.add(Beginn, Integer.valueOf(1));
 
         SpracheLabel = new JLabel("Sprache wählen");
         SpracheLabel.setBounds(450, 150, 200, 50);
-        this.add(SpracheLabel);
+        layeredPane.add(SpracheLabel, Integer.valueOf(1));
 
         // Dropdown-Menü für Sprachauswahl
         String[] sprachen = {"Deutsch", "English", "Русский", "Français"};
         Sprache = new JComboBox(sprachen);
         Sprache.setBounds(450, 200, 200, 30);
-        this.add(Sprache);
+        layeredPane.add(Sprache, Integer.valueOf(1));
 
         SpracheAnnehmen = new JButton("Speichern");
         SpracheAnnehmen.setBounds(450, 250, 200, 50);
         SpracheAnnehmen.addActionListener(this);
-        this.add(SpracheAnnehmen);
+        layeredPane.add(SpracheAnnehmen, Integer.valueOf(1));
 
         MusikButton = new JButton("Musik An/Aus");
         MusikButton.setBounds(50, 700, 200, 50);
         MusikButton.addActionListener(this);
-        this.add(MusikButton);
+        layeredPane.add(MusikButton, Integer.valueOf(1));
 
         LautstarkeRegler = new JSlider(JSlider.HORIZONTAL, 0, 100, 50);
         LautstarkeRegler.setBounds(50, 650, 200, 50);
         LautstarkeRegler.addChangeListener(this);
-        this.add(LautstarkeRegler);
+        layeredPane.add(LautstarkeRegler, Integer.valueOf(1));
 
         this.setVisible(true);
 
